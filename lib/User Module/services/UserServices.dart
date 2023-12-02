@@ -107,7 +107,6 @@ Future<bool> login(String id, String password) async {
         },
       ),
     );
-
     final status = json.decode(response.body)['status'];
     final token = json.decode(response.body)['token'];
 

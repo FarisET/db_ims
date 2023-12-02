@@ -64,6 +64,7 @@ class _AdminHomePageState extends State<AdminHomePage>  with TickerProviderState
   Widget build(BuildContext context) {
     final countResolvedProvider = Provider.of<CountIncidentsResolvedProvider>(context).totalIncidentsResolved;
     final countReportedProvider = Provider.of<CountIncidentsReportedProvider>(context).totalIncidentsReported;
+    final countByIncidentSubTypeProvider = Provider.of<CountByIncidentSubTypesProviderClass>(context).countByIncidentSubTypes;
     
     double screenHeight = MediaQuery.of(context).size.height;
     double containerHeight = screenHeight * 0.7;
@@ -117,12 +118,7 @@ child: FilledButton(
         drawer: AppDrawer(
           totalIncidentsReported:countReportedProvider ?? 'null value',
           totalIncidentsResolved: countResolvedProvider ?? 'null value',
-          incidentsBreakdown: {
-            'Safety': 5,
-            'Security': 4,
-            'CodeOfConduct': 4,
-            'maintenance': 6
-          },
+          incidentsBreakdown: countByIncidentSubTypeProvider
         ),
         backgroundColor: Colors.blue[600],
         body: SafeArea(
