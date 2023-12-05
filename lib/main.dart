@@ -1,3 +1,5 @@
+import 'package:db_ims/Admin%20Module/providers/action_team_efficiency_provider.dart';
+import 'package:db_ims/Admin%20Module/providers/fetch_countOfLocations_provider%20copy.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -74,9 +76,9 @@ class MyApp extends StatelessWidget {
        ChangeNotifierProvider<ApprovalStatusProvider>(create: (context) => ApprovalStatusProvider()),
        ChangeNotifierProvider<CountIncidentsResolvedProvider>(create: (context) => CountIncidentsResolvedProvider()),
        ChangeNotifierProvider<CountIncidentsReportedProvider>(create: (context) => CountIncidentsReportedProvider()),
-       ChangeNotifierProvider<CountByIncidentSubTypesProviderClass>(create: (context) => CountByIncidentSubTypesProviderClass())
-
-
+       ChangeNotifierProvider<CountByIncidentSubTypesProviderClass>(create: (context) => CountByIncidentSubTypesProviderClass()),
+       ChangeNotifierProvider<CountByLocationProviderClass>(create: (context) => CountByLocationProviderClass()),
+       ChangeNotifierProvider<ActionTeamEfficiencyProviderClass>(create: (context) => ActionTeamEfficiencyProviderClass())
 
     ],
       child: MaterialApp(

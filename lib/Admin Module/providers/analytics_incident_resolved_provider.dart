@@ -23,7 +23,7 @@ class CountIncidentsResolvedProvider extends ChangeNotifier {
       loading = false;
       notifyListeners();
       // Parse the response and return the String value
-      return json.decode(response.body).toString(); // Assuming response.body is a String
+      return response.body; // Assuming response.body is a String
     } else {
       // If the server did not return a 200 OK response,
       // throw an exception.

@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_types_as_parameter_names
 
+import 'package:db_ims/Admin%20Module/providers/action_team_efficiency_provider.dart';
+import 'package:db_ims/Admin%20Module/providers/fetch_countOfLocations_provider%20copy.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,6 +36,9 @@ class _AdminHomePageState extends State<AdminHomePage>  with TickerProviderState
       Provider.of<CountIncidentsResolvedProvider>(context, listen: false).getCountResolvedPostData();
       Provider.of<CountIncidentsReportedProvider>(context, listen: false).getCountReportedPostData();
       Provider.of<CountByIncidentSubTypesProviderClass>(context, listen: false).getcountByIncidentSubTypesPostData();
+      Provider.of<CountByLocationProviderClass>(context, listen: false).getcountByIncidentLocationPostData();
+      Provider.of<ActionTeamEfficiencyProviderClass>(context, listen: false).getactionTeamEfficiencyData();
+
 
    
       });
@@ -65,7 +70,9 @@ class _AdminHomePageState extends State<AdminHomePage>  with TickerProviderState
     final countResolvedProvider = Provider.of<CountIncidentsResolvedProvider>(context).totalIncidentsResolved;
     final countReportedProvider = Provider.of<CountIncidentsReportedProvider>(context).totalIncidentsReported;
     final countByIncidentSubTypeProvider = Provider.of<CountByIncidentSubTypesProviderClass>(context).countByIncidentSubTypes;
-    
+    final countByLocationProvider = Provider.of<CountByLocationProviderClass>(context, listen: false).countByLocation;
+    final actionTeamEfficiencyProvider = Provider.of<ActionTeamEfficiencyProviderClass>(context, listen: false).actionTeamEfficiency;
+
     double screenHeight = MediaQuery.of(context).size.height;
     double containerHeight = screenHeight * 0.7;
 
@@ -118,7 +125,9 @@ child: FilledButton(
         drawer: AppDrawer(
           totalIncidentsReported:countReportedProvider ?? 'null value',
           totalIncidentsResolved: countResolvedProvider ?? 'null value',
-          incidentsBreakdown: countByIncidentSubTypeProvider
+          incidentSubtypeBreakdown: countByIncidentSubTypeProvider,
+          incidentLocationBreakdown: countByLocationProvider,
+          actionTeamEfficiencyBreakdown: actionTeamEfficiencyProvider
         ),
         backgroundColor: Colors.blue[600],
         body: SafeArea(
