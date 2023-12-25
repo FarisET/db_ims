@@ -1,16 +1,23 @@
 # db_ims
 
-A new Flutter project.
+An incident Management System mobile application to report and resolve issues on your premises quicker.
 
-## Getting Started
+3 Modules:-
+1) User: Reports an incident by filling digital form with basic details and image
+2) Admin: Views reported incident and assigns incident to relevant department/action team. Approves and assigns incidents to action team.
+3) Action Team: Resolves the issue, fills a form detailing the underlying causes and resolution (5 Whys used for Root Cause Analysis). Report to be approved by admin
 
-This project is a starting point for a Flutter application.
+Learning Outcomes:-
+SQL:-
+Triggers are used to update reported incidents status, from incident 'open' to 'assigned' to 'pending approval' and finally 'completed'
+Procedures used to calculate action team efficicenies, keep count of reported, resolved and category wise incidents.
 
-A few resources to get you started if this is your first Flutter project:
+Flutter:-
+A good grip on UI Design and data handling. 
+Understanding of data flow from MySQL tables through node and finally in flutter.
+CRUD operations
+state management (Providers & Bloc)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+NodeJS:-
+CRUD operations
+DB and flutter app connectivity
