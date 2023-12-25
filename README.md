@@ -9,16 +9,16 @@ An incident Management System mobile application to report and resolve issues on
 
 Learning Outcomes:-
 
-SQL:-
+# SQL:-
 Triggers are used to update reported incidents status, from incident 'open' to 'assigned' to 'pending approval' and finally 'completed'
 Procedures used to calculate action team efficiencies, and keep count of reported, resolved, and category-wise incidents.
 
-Flutter:-
+# Flutter:-
 A good grip on UI Design and data handling. 
 Understanding of data flow from MySQL tables through nodeJS and finally in Flutter.
 CRUD operations
 state management (Providers & Bloc)
 
-NodeJS:-
+# NodeJS:-
 CRUD operations
 DB and Flutter app connectivity
